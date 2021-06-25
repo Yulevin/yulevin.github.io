@@ -391,6 +391,6 @@ footer {
 
 @media all and (max-width: 370px) {
     main > article > p {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
