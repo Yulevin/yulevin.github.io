@@ -7,6 +7,9 @@ body {
     padding: 2% 0;
     background: linear-gradient(rgb(117, 117, 117) 2%, rgb(255, 96, 102) 98%);
 }
+li {
+    list-style-type: none;
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -302,9 +305,6 @@ footer {
     padding-left: 0;
     padding-right: 0;
 }
-.grid-container > nav > ul > li {
-    list-style-type: none;
-}
 .grid-container > nav > ul > li > a {
     font-size: 0.6em;
     color: rgba(255, 255, 255, 0.6);
@@ -386,5 +386,11 @@ footer {
         margin: 20px 0;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media all and (max-width: 370px) {
+    main > article > p {
+        font-size: 0.9em;
     }
 }
