@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <title>Concept Layout</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="grid-container">
+                <!-- navigation -->
+                <nav>
+                    <ul>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">gallery</a></li>
+                        <li><a href="#">portfolio</a></li>
+                        <li><a href="#">join us</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#">about us</a></li>
+                    </ul>
+                </nav>
+                <!-- main -->
+                <main>
+                    <article>
+                        <h1>concept article header</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perferendis accusantium amet doloribus magni harum. Ipsa,
+                            illo ratione dicta consequuntur quam hic doloribus assumenda
+                            dolorem atque aperiam iste cum, veritatis inventore!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perferendis accusantium amet doloribus magni harum. Ipsa,
+                            illo ratione dicta consequuntur quam hic doloribus assumenda
+                            dolorem atque aperiam iste cum, veritatis inventore!
+                        </p>
+                    </article>
+                </main>
+                <!-- sidebar -->
+                <aside>
+                    <canvas id="leftDraw" width="400" height="586" z-index='1000'></canvas>
+                    <div class="image"></div>
+                </aside>
+                <!-- footer -->
+                <footer>
+                    <div class="footer__social-networks">
+                        <div class="footer__links-icons">
+                            <span class="material-icons-outlined">
+                                polymer
+                            </span>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    account_circle
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    favorite_border
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    language
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    history
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    pets
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    view_in_ar
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span class="material-icons-outlined">
+                                    timeline
+                                </span>
+                            </a>
+                        </div>
+                        <div class="footer__inscription">
+                            2021 made with love in europe
+                        </div>
+                    </div>
+                    <div class="footer__links">
+                        <div class="footer__links-left">
+                            <a href="#">join us</a>
+                            <a href="#">contact</a>
+                            <a href="#">about us</a>
+                        </div>
+                        <div class="footer__links-right">
+                            <a href="#">our approach</a>
+                            <a href="#">careers</a>
+                            <a href="#">request a quote</a>
+                            <a href="#">get in touch</a>
+                        </div>
+                    </div>
+                    <div class="footer__search">
+                        <button type="button" class="footer__button">apply</button>
+                        <input type="text" class="footer__search-input"></input>
+                    </div>
+                </footer>
+                <!-- functional window buttons -->
+                <div class="w-container">
+                    <a href="#" class="close"></a>
+                    <a href="#" class="minimize"></a>
+                    <a href="#" class="open_in_full"></a>
+                </div>
+                <div class="logo">
+                    <div class="logo__polymer">
+                        <span class="material-icons-outlined">
+                            polymer
+                        </span>
+                    </div>
+                    <div class="logo__circle">
+                        <div>
+                            <p>con</p>
+                            <p>cept</p>
+                            <p>utd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function draw() {
+                const getDrawLines = (
+                    xMoveTo,
+                    yMoveTo,
+
+                    cpxBeforeArc,
+                    cpyBeforeArc,
+                    xBeforeArc,
+                    yBeforeArc,
+
+                    cpxArc,
+                    cpyArc,
+                    xArc,
+                    yArc,
+
+                    cpxAfterArc,
+                    cpyAfterArc,
+                    xAfterArc,
+                    yAfterArc,
+
+                    lines,
+                    step,
+                    lineWidth,
+                    color
+                ) => {
+                    for (let times = 0; times < lines; times++) {
+                        ctx.beginPath();
+                        ctx.moveTo(xMoveTo += step, yMoveTo);
+                        ctx.lineWidth = lineWidth;
+                        ctx.strokeStyle = color;
+                        ctx.quadraticCurveTo(cpxBeforeArc += step, cpyBeforeArc += step, xBeforeArc += step, yBeforeArc);
+                        ctx.quadraticCurveTo(cpxArc += step, cpyArc, xArc += step, yArc -= step);
+                        ctx.quadraticCurveTo(cpxAfterArc += step, cpyAfterArc, xAfterArc += step, yAfterArc);
+                        ctx.stroke();
+                    }
+                }
+                var canvasLeftDraw = document.getElementById('leftDraw');
+                if (canvasLeftDraw.getContext) {
+                    var ctx = canvasLeftDraw.getContext('2d');
+
+                    getDrawLines(
+                        0, 0,
+                        0, 0, 0, 300,
+                        0, 400, 150, 500,
+                        150, 500, 150, 586,
+                        25, 5, 2, 'rgba(250, 152, 50, .9)' 
+                    );
+                }
+            }
+            draw();
+        </script>
+    </body>
+</html>
