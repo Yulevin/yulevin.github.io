@@ -44,7 +44,7 @@ a {
     grid-area: w-container;
     width: auto;
     height: auto;
-    background-color: #515151;
+    background-color: rgb(81, 81, 81);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -272,7 +272,7 @@ footer {
 }
 .footer__links > div > a {
     color: rgb(224, 91, 98);
-    transition: color 0.6s ease;
+    transition: color .6s ease;
 }
 .footer__links > div > a:hover {
     color: rgb(255, 255, 255);
@@ -295,7 +295,6 @@ footer {
     border: 2px solid transparent;
     border-left-color: rgb(224, 92, 96);
     padding: 0 10px;
-    transition: 0.6 ease;
 }
 .grid-container > nav > ul {
     display: flex;
@@ -308,7 +307,7 @@ footer {
 .grid-container > nav > ul > li > a {
     font-size: 0.6em;
     color: rgba(255, 255, 255, 0.6);
-    transition: color 0.6s ease;
+    transition: color .6s ease;
 }
 .grid-container > nav > ul > li > a:hover {
     color: rgb(255, 255, 255);
